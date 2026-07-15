@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NataJivva — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest-green: #3F5B4A;
+      --sage-green: #A8B5A2;
+      --warm-beige: #F3EBDD;
+      --sand: #DCCCB4;
+      --terracotta: #B97858;
+      --dusty-gold: #B89B6A;
+      --slate-blue: #6F8798;
+      --charcoal: #2F2F2F;
+      --warm-white: #FCFAF6;
+      --soft-gray: #E8E5DF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(168,181,162,0.25), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(220,204,180,0.35), transparent 45%),
+        var(--warm-white);
+    }
+
+    .container { max-width: 640px; }
+
+    .logo {
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      background: var(--forest-green);
+      color: var(--warm-beige);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 12px 30px rgba(63,91,74,0.25);
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 600;
+      color: var(--forest-green);
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: var(--terracotta);
+      margin-top: 0.75rem;
+    }
+
+    .subtitle {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--sage-green);
+      margin-top: 1.5rem;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--dusty-gold);
+      border-radius: 3px;
+      margin: 2.5rem auto;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      font-weight: 500;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      color: var(--warm-white);
+      background: var(--forest-green);
+      padding: 0.9rem 2.5rem;
+      border-radius: 999px;
+    }
+
+    .note {
+      margin-top: 2rem;
+      color: var(--slate-blue);
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">N</div>
+    <h1>NataJivva</h1>
+    <p class="tagline">Where Research Meets Clarity.</p>
+    <p class="subtitle">Bimbingan Skripsi &amp; Riset</p>
+
+    <div class="divider"></div>
+
+    <span class="coming-soon">Coming Soon</span>
+
+    <p class="note">Kami sedang mempersiapkan sesuatu yang istimewa untuk Anda.</p>
+  </div>
+</body>
+</html>
