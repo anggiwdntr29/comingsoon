@@ -82,6 +82,14 @@
       margin-top: 1.5rem;
     }
 
+    .taglines {
+      margin-top: 1rem;
+      color: var(--slate-blue);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
     .divider {
       width: 60px;
       height: 3px;
@@ -108,20 +116,70 @@
       font-size: 0.95rem;
       font-weight: 300;
     }
+
+    .lang-switch {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 0.4rem;
+      background: var(--soft-gray);
+      padding: 0.3rem;
+      border-radius: 999px;
+    }
+
+    .lang-switch button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--charcoal);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-switch button.active {
+      background: var(--forest-green);
+      color: var(--warm-white);
+    }
   </style>
 </head>
 <body>
+  <div class="lang-switch">
+    <button id="btn-id" onclick="setLang('id')">ID</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+
   <div class="container">
     <div class="logo">N</div>
     <h1>NataJivva</h1>
-    <p class="tagline">Where Research Meets Clarity.</p>
-    <p class="subtitle">Bimbingan Skripsi &amp; Riset</p>
+    <p class="tagline" data-id="Bersama Mewujudkan Riset yang Berkualitas." data-en="Together Realizing Quality Research."></p>
+    <p class="taglines"
+       data-id="Mendampingi Setiap Langkah Perjalanan Akademik Anda.<br>Pendampingan Akademik dari Awal hingga Tuntas."
+       data-en="Guiding Every Step of Your Academic Journey.<br>Academic Support from Start to Finish."></p>
 
     <div class="divider"></div>
 
-    <span class="coming-soon">Coming Soon</span>
+    <span class="coming-soon" data-id="Segera Hadir" data-en="Coming Soon"></span>
 
-    <p class="note">Kami sedang mempersiapkan sesuatu yang istimewa untuk Anda.</p>
+    <p class="note" data-id="Kami sedang mempersiapkan sesuatu yang istimewa untuk Anda." data-en="We are preparing something special for you."></p>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      localStorage.setItem('natajivva-lang', lang);
+    }
+    setLang(localStorage.getItem('natajivva-lang') || 'id');
+  </script>
 </body>
 </html>
